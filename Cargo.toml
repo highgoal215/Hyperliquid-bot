@@ -1,0 +1,28 @@
+[package]
+name = "hyperliquid"
+version = "0.2.4"
+edition = "2021"
+license = "MIT"
+authors = ["Dennoh Peter <mail@dennohpeter.com>"]
+description = "A Rust library for the Hyperliquid API"
+homepage = "https://hyperliquid.xyz/"
+categories = ["api-bindings", "cryptography::cryptocurrencies", "finance"]
+repository = "https://github.com/dennohpeter/hyperliquid"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ethers = { version = "2.0.14", features = ["eip712"] }
+futures-util = "0.3.30"
+rmp-serde = "1.3.0"
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = "1.0.128"
+thiserror = "1.0.63"
+tokio = { version = "1.40.0", features = ["macros", "rt-multi-thread"] }
+tokio-tungstenite = { version = "0.24.0", features = ["native-tls"] }
+uuid = { version = "1.10.0", features = ["v4", "serde"] }
+
+[dependencies.reqwest]
+version = "0.12.7"
+default-features = false
+features = ["json", "rustls-tls"]
